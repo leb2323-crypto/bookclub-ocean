@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тетрадь встречи · Книжный клуб партнёров</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="top-row">
+      <div class="brand"><b>Голубой океан</b> · <span id="clubName"></span></div>
+      <div class="who hidden" id="who">
+        <span id="whoName"></span> <span class="save-status" id="saveStatus"></span>
+        <button class="linkbtn small" id="logout" type="button">Сменить участника</button>
+      </div>
+    </div>
+    <div class="notice">Ваши ответы видит ведущая. Часть ответов мы обсуждаем на общем экране.</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="login hidden" id="login">
+    <span class="label">Книжный клуб партнёров</span>
+    <h1>«Стратегия голубого океана»</h1>
+    <p class="muted" style="margin-top:12px">Введите имя и компанию. По ним тетрадь найдёт ваши ответы при следующем входе.</p>
+    <form id="loginForm" class="card">
+      <label class="f" for="lName">Имя и фамилия</label>
+      <input type="text" id="lName" autocomplete="name" required>
+      <label class="f" for="lCompany">Компания</label>
+      <input type="text" id="lCompany" autocomplete="organization" required>
+      <div class="btns"><button class="btn" type="submit" id="loginBtn">Открыть тетрадь</button></div>
+      <p class="small muted" id="loginMsg" style="margin-top:10px"></p>
+    </form>
+  </section>
+
+  <section class="hidden" id="app">
+    <nav class="steps" id="steps" aria-label="Разделы тетради"></nav>
+    <div class="screen" id="screen"></div>
+    <div class="pager">
+      <button class="btn ghost" type="button" id="prev">Назад</button>
+      <button class="btn" type="button" id="next">Дальше</button>
+    </div>
+    <div class="ref" id="ref"></div>
+  </section>
+
+  <section class="locked-box hidden" id="badClub">
+    <div class="big">Ссылка неполная</div>
+    <p>Попросите у ведущей ссылку на тетрадь вашего клуба.</p>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="notebook.js"></script>
+</body>
+</html>

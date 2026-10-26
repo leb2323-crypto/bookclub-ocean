@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Дашборд ведущей · Книжный клуб партнёров</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap wide">
+    <div class="top-row">
+      <div class="brand"><b>Дашборд ведущей</b> · <span id="clubName"></span></div>
+      <div class="who" id="liveInfo"><span class="live off" id="liveDot"></span><span id="liveText">Нет связи</span></div>
+    </div>
+    <nav class="dash-nav hidden" id="dashNav">
+      <a href="#people">1 Участники</a><a href="#warmup">2 Разминка</a><a href="#ideas">3 Ключевая мысль</a>
+      <a href="#map">4 Карта продуктов</a><a href="#vote">5 Выбор сценария</a><a href="#routeA">6 Маршрут А</a>
+      <a href="#routeB">7 Маршрут Б</a><a href="#final">8 Финал</a><a href="#export">9 Экспорт</a><a href="#reset">10 Сброс</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap wide">
+  <section class="login hidden" id="login">
+    <span class="label">Только для ведущей</span>
+    <h1>Вход в дашборд</h1>
+    <form id="loginForm" class="card" style="margin-top:18px">
+      <label class="f" for="pass">Пароль клуба</label>
+      <input type="password" id="pass" autocomplete="current-password" required>
+      <div class="btns"><button class="btn" type="submit">Войти</button></div>
+      <p class="small muted" id="loginMsg" style="margin-top:10px"></p>
+    </form>
+  </section>
+
+  <section class="locked-box hidden" id="badClub">
+    <div class="big">Ссылка неполная</div>
+    <p>В ссылке нет номера клуба: добавьте ?club=1 или ?club=2.</p>
+  </section>
+
+  <div class="hidden" id="dash">
+    <section class="block" id="people"><h2><span class="num">1</span>Кто подключился</h2><div data-block="people"></div></section>
+    <section class="block" id="warmup"><h2><span class="num">2</span>Разминка</h2><div data-block="warmup"></div></section>
+    <section class="block" id="ideas"><h2><span class="num">3</span>Ключевая мысль</h2><div data-block="ideas"></div></section>
+    <section class="block" id="map"><h2><span class="num">4</span>Карта продуктов</h2><div data-block="map"></div></section>
+    <section class="block" id="vote"><h2><span class="num">5</span>Выбор сценария</h2><div data-block="vote"></div></section>
+
+    <section class="block" id="routeA">
+      <details id="detA"><summary class="ref-sum"><h2 style="display:inline-flex;gap:12px;align-items:center"><span class="num">6</span>Маршрут А «Океан на стыке»</h2></summary>
+        <div data-block="routeA"></div>
+      </details>
+    </section>
+
+    <section class="block" id="routeB">
+      <details id="detB"><summary class="ref-sum"><h2 style="display:inline-flex;gap:12px;align-items:center"><span class="num">7</span>Маршрут Б «От колонистов к первопроходцам»</h2></summary>
+        <div data-block="routeB"></div>
+      </details>
+    </section>
+
+    <section class="block" id="final"><h2><span class="num">8</span>Финал: 1 фокус – 1 действие</h2><div data-block="final"></div></section>
+    <section class="block" id="export"><h2><span class="num">9</span>Экспорт</h2>
+      <p>Все ответы клуба одним файлом.</p>
+      <div class="btns"><button class="btn" type="button" id="csvBtn">Скачать CSV</button><button class="btn ghost" type="button" id="jsonBtn">Скачать JSON</button></div>
+    </section>
+    <section class="block" id="reset" style="border-bottom:0;padding-bottom:60px"><h2><span class="num">10</span>Сброс перед следующей встречей</h2>
+      <p>Удаляет все ответы этого клуба и возвращает тетрадь в начальное состояние. Сначала скачайте ответы.</p>
+      <button class="btn danger" type="button" id="resetBtn">Очистить ответы клуба</button>
+      <p class="small muted" id="resetMsg" style="margin-top:10px"></p>
+    </section>
+  </div>
+</main>
+
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="host.js"></script>
+</body>
+</html>
